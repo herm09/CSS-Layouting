@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: rgb(204, 238, 249);
+
+}
+
+/*-----------------------------------------------------*/
+nav {
+    height: 80px;
+    display: flex;
+    background-color: rgb(250, 250, 181);
+    border-bottom: 3px solid black;
+    padding-inline: 40px;
+    align-items: center;
+    gap: 40px;
+}
+
+nav img {
+    height: 50px;
+    flex-shrink: 0;
+}
+
+nav ul {
+    display: flex;
+    gap: 70px;
+    list-style: none;
+    padding-top: 7.5px;  
+    flex-grow: 1;
+    background-color: rgb(246, 246, 132);
+    justify-content: center;
+}
+
+nav button {
+    background-color: rgb(248, 145, 104);
+    border-style: none;
+    padding: 5px;
+}
+
+@media screen and (max-width: 700px) {
+    nav {
+        flex-direction: column; /* Passage à une colonne pour les éléments */
+        align-content: center;
+        height: fit-content;
+    }
+
+    nav ul {
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    nav button {
+        margin-bottom: 9px;
+    }
+}
+
+/*-----------------------------------------------------*/
+
+.contenu {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-auto-flow: row;
+    align-items: flex-start;
+    margin-top: 60px;
+    gap: 30px;
+    padding: 20px;
+}
+
+/*-----------------------------------------------------*/
+
+.tweets {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.tweet {
+    grid-column: span 1;
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid #0e0e0e;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+
+}
+
+.tweet header {
+    display: flex;
+    align-items: center;
+}
+
+.tweet header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.tweet p {
+    margin-top: 10px;
+}
+
+.tweets .tweet:nth-child(3n) {
+    grid-column: span 2;
+    justify-content: center;
+    
+}
+
+/*-----------------------------------------------------*/
+
+.trend {
+    height: 100vh;
+    position: sticky;
+    top: 80px;
+}
+
+.form {
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    text-align: center;
+}
+
+.form p {
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.form textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border: 2px solid #0e0e0e;
+}
+
+@media screen and (max-width: 800px) {
+    .contenu {
+        grid-template-columns: 1fr;
+    }
+
+    .tweets {
+        order: 2;
+        grid-template-columns: 1fr;
+    }
+
+    .trend {
+        order: 1;
+        position: static;
+    }
+}
