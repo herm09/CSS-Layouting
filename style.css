@@ -131,6 +131,7 @@ nav button:hover {
     height: 100vh;
     position: sticky;
     top: 80px;
+    padding-top: 6px;
 }
 
 .form {
